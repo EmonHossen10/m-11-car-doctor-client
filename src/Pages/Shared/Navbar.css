@@ -1,0 +1,8 @@
+.outside{
+    color: #FF3811;
+}
+.outside:hover{
+    color: black;
+    background: #FF3811;
+    border: 0;
+}
