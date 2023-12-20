@@ -12,14 +12,14 @@ const Banner = () => {
         bg-gradient-to-r from-[#151515] to-[#15151500] 
         ">
           <div className="text-white space-y-7">
-            <h2 className="text-5xl font-bold w-1/3 ">Affordable Price For Car Servicing</h2>
-            <p  className="w-[522px]"> 
+            <h2 className="lg:text-5xl text-3xl font-bold w-2/3 lg:w-1/3 ">Affordable Price For Car Servicing</h2>
+            <p  className="w-[522px] text-sm lg:text-xl "> 
               There are many variations of passages of available, but the
               majority have suffered alteration in some form
             </p>
             <div >
-              <button className="btn btn-error mr-5 ">Discover More</button>
-              <button className="btn btn-outline btn-warning">Latest Project</button>
+              <button className="btn btn-sm lg:btn-md btn-error mr-5 ">Discover More</button>
+              <button className="btn btn-sm lg:btn-md btn-outline btn-warning">Latest Project</button>
             </div>
           </div>
         </div>
@@ -38,14 +38,14 @@ const Banner = () => {
         bg-gradient-to-r from-[#151515] to-[#15151500] 
         ">
           <div className="text-white space-y-7">
-            <h2 className="text-5xl font-bold w-1/3 ">Efficient Oil Change Services for Peak Engine Performance</h2>
-            <p  className="w-[522px]"> 
+            <h2 className="lg:text-5xl text-3xl font-bold w-2/3 lg:w-1/3 ">Efficient Oil Change Services for Peak Engine Performance</h2>
+            <p  className="w-[522px] text-sm lg:text-xl "> 
               There are many variations of passages of available, but the
               majority have suffered alteration in some form
             </p>
             <div >
-              <button className="btn btn-error mr-5 ">Discover More</button>
-              <button className="btn btn-outline btn-warning">Latest Project</button>
+              <button className="btn btn-sm lg:btn-md btn-error mr-5 ">Discover More</button>
+              <button className="btn btn-sm lg:btn-md btn-outline btn-warning">Latest Project</button>
             </div>
           </div>
         </div>
@@ -64,14 +64,14 @@ const Banner = () => {
         bg-gradient-to-r from-[#151515] to-[#15151500] 
         ">
           <div className="text-white space-y-7">
-            <h2 className="text-5xl font-bold w-1/3 ">Tire Rotation and Alignment: Prolonging Tire Life</h2>
-            <p  className="w-[522px]"> 
+            <h2 className="lg:text-5xl text-3xl font-bold w-2/3 lg:w-1/3 ">Tire Rotation and Alignment: Prolonging Tire Life</h2>
+            <p className="w-[522px] text-sm lg:text-xl "> 
               There are many variations of passages of available, but the
               majority have suffered alteration in some form
             </p>
             <div >
-              <button className="btn btn-error mr-5 ">Discover More</button>
-              <button className="btn btn-outline btn-warning">Latest Project</button>
+              <button className="btn btn-sm lg:btn-md btn-error mr-5 ">Discover More</button>
+              <button className="btn btn-sm lg:btn-md btn-outline btn-warning">Latest Project</button>
             </div>
           </div>
         </div>
@@ -90,14 +90,14 @@ const Banner = () => {
         bg-gradient-to-r from-[#151515] to-[#15151500] 
         ">
           <div className="text-white space-y-7">
-            <h2 className="text-5xl font-bold w-1/3 ">Fluid Flushes Enhancing Vehicle Longevity</h2>
-            <p  className="w-[522px]"> 
+            <h2 className="lg:text-5xl text-3xl font-bold w-2/3 lg:w-1/3 ">Fluid Flushes Enhancing Vehicle Longevity</h2>
+            <p className="w-[522px] text-sm lg:text-xl "> 
               There are many variations of passages of available, but the
               majority have suffered alteration in some form
             </p>
             <div >
-              <button className="btn btn-error mr-5 ">Discover More</button>
-              <button className="btn btn-outline btn-warning">Latest Project</button>
+              <button className="btn btn-sm lg:btn-md btn-error mr-5 ">Discover More</button>
+              <button className="btn btn-sm lg:btn-md btn-outline btn-warning">Latest Project</button>
             </div>
           </div>
         </div>
