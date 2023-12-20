@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import { FaArrowRightLong } from "react-icons/fa6";
 
 const ServiceCard = ({ service }) => {
   // console.log(Object.keys(service).join(","))
-  const { _id, service_id, title, img, price, description, facility } = service;
+  const { title, img, price } = service;
   return (
     <div className="card   bg-base-100 shadow-2xl ">
       <figure className="px-5 pt-5">
