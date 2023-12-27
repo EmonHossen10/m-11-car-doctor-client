@@ -1,27 +1,37 @@
-
-import { FaFacebookF } from "react-icons/fa6";
-import { FaLinkedinIn, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Lottie from "lottie-react";
 
-import Lottie from 'lottie-react';
-import loginImg from "./login.json"
+import img from "./signImg.json";
 
-const handleLogin = (e) => {
+const handleSignUp = (e) => {
   e.preventDefault();
   console.log("ok");
 };
 
-const Login = () => {
+const SignUp = () => {
   return (
     <div className="hero min-h-screen  ">
       <div className="hero-content flex-col lg:flex-row   w-full  justify-around">
         <div className="text-center w-1/2 lg:text-left">
-           
-          <Lottie animationData={loginImg} ></Lottie>
+          <Lottie animationData={img}></Lottie>
         </div>
         <div className="card   w-1/2 max-w-sm shadow-2xl bg-base-100">
-          <form onSubmit={handleLogin} className="card-body">
-            <h1 className="text-4xl font-bold text-center py-5">Login now!</h1>
+          <form onSubmit={handleSignUp} className="card-body">
+            <h1 className="text-4xl font-bold text-center py-5">
+              Sign Up Now !!
+            </h1>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Name</span>
+              </label>
+              <input
+                type="text"
+                placeholder="name"
+                className="input input-bordered"
+                name="name"
+                required
+              />
+            </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -36,7 +46,7 @@ const Login = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Password</span>
+                <span className="label-text">Confirm Password</span>
               </label>
               <input
                 type="password"
@@ -52,43 +62,21 @@ const Login = () => {
               </label>
             </div>
             <div className="form-control mt-6">
-              <button className="btn bg-[#FF3811] text-white">Sign In</button>
+              <button className="btn bg-[#FF3811] text-white">Sign Up </button>
             </div>
           </form>
 
           {/* others */}
           <section>
-            <div className="flex items-center pt-4 space-x-1  ">
-              <div className="flex-1 h-px sm:w-16 "></div>
-              <p className="px-3 text-sm pb-4 ">Or Sign In with</p>
-              <div className="flex-1 h-px sm:w-16 "></div>
-            </div>
-            <div className="flex justify-center space-x-4">
-              <button className="p-3 rounded-sm">
-                <FaFacebookF className="text-2xl"></FaFacebookF>
-              </button>
-              <button
-                aria-label="Log in with Twitter"
-                className="p-3 rounded-sm"
-              >
-                <FaLinkedinIn className="text-2xl"></FaLinkedinIn>
-              </button>
-              <button
-                aria-label="Log in with GitHub"
-                className="p-3 rounded-sm"
-              >
-                <FaGoogle className="text-2xl"></FaGoogle>
-              </button>
-            </div>
             <p className="text-sm text-center py-5 ">
-              New to Car doctors ? 
+              Already have an account ?
               <Link
                 rel="noopener noreferrer"
                 href="#"
                 className="underline font-bold text-[#FF3811]"
-                to="/signup"
+                to="/login"
               >
-                 Sign up
+                Login
               </Link>
             </p>
           </section>
@@ -98,4 +86,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;
