@@ -1,23 +1,40 @@
-
 import { FaFacebookF } from "react-icons/fa6";
 import { FaLinkedinIn, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-import Lottie from 'lottie-react';
-import loginImg from "./login.json"
-
-const handleLogin = (e) => {
-  e.preventDefault();
-  console.log("ok");
-};
+import Lottie from "lottie-react";
+import loginImg from "./login.json";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Login = () => {
+  const { signIn } = useContext(AuthContext);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    //
+    signIn(email,password)
+    .then((result) => {
+      const user = result.user;
+      console.log(user);
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorMessage);
+    });
+  };
+
   return (
     <div className="hero min-h-screen  ">
       <div className="hero-content flex-col lg:flex-row   w-full  justify-around">
         <div className="text-center w-1/2 lg:text-left">
-           
-          <Lottie animationData={loginImg} ></Lottie>
+          <Lottie animationData={loginImg}></Lottie>
         </div>
         <div className="card   w-1/2 max-w-sm shadow-2xl bg-base-100">
           <form onSubmit={handleLogin} className="card-body">
@@ -81,14 +98,14 @@ const Login = () => {
               </button>
             </div>
             <p className="text-sm text-center py-5 ">
-              New to Car doctors ? 
+              New to Car doctors ?
               <Link
                 rel="noopener noreferrer"
                 href="#"
                 className="underline font-bold text-[#FF3811]"
                 to="/signup"
               >
-                 Sign up
+                Sign up
               </Link>
             </p>
           </section>
