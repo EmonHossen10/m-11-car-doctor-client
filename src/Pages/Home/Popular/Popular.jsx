@@ -21,21 +21,16 @@ const Popular = () => {
         the majority have suffered alteration in some form, by injected humour,
         or randomised words which don't look even slightly believable.{" "}
       </p>
-
       <section className="grid grid-cols-1 lg:grid-cols-3 gap-5 my-10 ">
-
-        {
-            data.map(item=><PopularCard 
-                item={item}
-                key={item.id}
-            ></PopularCard>)
-        }
+        {data.map((item) => (
+          <PopularCard item={item} key={item.id}></PopularCard>
+        ))}
       </section>
       <div className="text-center mb-5">
-      <button className="btn btn-outline text-[#FF3811]   hover:bg-[#FF3811] hover:border-0 border-1 border-[#FF3811]">More Products</button>
-
+        <button className="btn btn-outline text-[#FF3811]   hover:bg-[#FF3811] hover:border-0 border-1 border-[#FF3811]">
+          More Products
+        </button>
       </div>
-
     </>
   );
 };

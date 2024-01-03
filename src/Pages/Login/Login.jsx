@@ -1,14 +1,18 @@
 import { FaFacebookF } from "react-icons/fa6";
 import { FaLinkedinIn, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import Lottie from "lottie-react";
 import loginImg from "./login.json";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log(location);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -18,16 +22,24 @@ const Login = () => {
     const password = form.password.value;
 
     //
-    signIn(email,password)
-    .then((result) => {
-      const user = result.user;
-      console.log(user);
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorMessage);
-    });
+    signIn(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        Swal.fire({
+          title: "Successful",
+          text: "Successfully LogIn",
+          icon: "success",
+        });
+
+        //
+        navigate(location?.state ? location?.state : "/");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage);
+      });
   };
 
   return (

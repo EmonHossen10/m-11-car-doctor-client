@@ -1,9 +1,10 @@
-/* eslint-disable react/prop-types */
 import { FaArrowRightLong } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const ServiceCard = ({ service }) => {
   // console.log(Object.keys(service).join(","))
-  const { title, img, price } = service;
+  const { _id, title, img, price } = service;
+  // console.log(service)
   return (
     <div className="card   bg-base-100 shadow-2xl ">
       <figure className="px-5 pt-5">
@@ -15,7 +16,9 @@ const ServiceCard = ({ service }) => {
           <p className="text-xl text-[#FF3811] font-semibold">
             Price :${price}
           </p>
-          <FaArrowRightLong className="text-[#FF3811]"></FaArrowRightLong>
+          <Link to={`/checkout/${_id}`}>
+            <FaArrowRightLong className="text-[#FF3811]"></FaArrowRightLong>
+          </Link>
         </div>
       </div>
     </div>

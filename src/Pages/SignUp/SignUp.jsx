@@ -4,6 +4,7 @@ import Lottie from "lottie-react";
 import img from "./signImg.json";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const SignUp = () => {
   const { createUser } = useContext(AuthContext);
@@ -20,6 +21,11 @@ const SignUp = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        Swal.fire({
+          title: "Successful",
+          text: "Successfully SignUp",
+          icon: "success",
+        });
       })
       .catch((error) => {
         const errorCode = error.code;
