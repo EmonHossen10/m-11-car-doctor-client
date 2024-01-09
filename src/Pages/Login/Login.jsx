@@ -7,6 +7,7 @@ import loginImg from "./login.json";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
@@ -24,19 +25,43 @@ const Login = () => {
     //
     signIn(email, password)
       .then((result) => {
-        const user = result.user;
-        console.log(user);
+        const loggedInUser = result.user;
+        console.log(loggedInUser);
+
         Swal.fire({
           title: "Successful",
           text: "Successfully LogIn",
           icon: "success",
         });
+        const user = { email };
 
-        //
-        navigate(location?.state ? location?.state : "/");
+        //navigation
+        // navigate(location?.state ? location?.state : "/");
+        // get access token
+
+        // get access token
+        axios
+          .post("http://localhost:5000/jwt", user, {
+            withCredentials: true,
+          })
+          .then((res) => {
+            console.log(res.data );
+            // if(res.data.success){
+            //   navigate(location?.state ? location?.state : "/");
+            // }
+             
+          });
+
+        // axios
+        //   .post("http://localhost:5000/jwt", user, { withCredentials: true })
+        //   .then((res) => {
+        //     console.log(res.data);
+        //     if (res.data.success) {
+        //       navigate(location?.state ? location?.state : "/");
+        //     }
+        //   });
       })
       .catch((error) => {
-        const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorMessage);
       });

@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import BookingRow from "./BookingRow";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const Bookings = () => {
   const { user } = useContext(AuthContext);
@@ -12,6 +13,12 @@ const Bookings = () => {
   fetch(url)
     .then((res) => res.json())
     .then((data) => setBookings(data));
+
+  // axios.get(url,{withCredentials:true})
+  // .then(res=>{
+  //   setBookings(res.data)
+  // })
+
 
   const handleDelete = (id) => {
     console.log("this is id ", id);
@@ -60,6 +67,7 @@ const Bookings = () => {
   return (
     <div>
       <h2>this is bookings Services : {bookings.length} </h2>
+      
 
       <div className="overflow-x-auto">
         <table className="table">
@@ -70,7 +78,7 @@ const Bookings = () => {
                 <label>
                   <input type="checkbox" className="checkbox" />
                 </label>
-              </th>
+              </th> 
               <th>Image</th>
               <th>Service</th>
               <th>Date</th>
