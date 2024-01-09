@@ -10,14 +10,14 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
 
   const url = `http://localhost:5000/bookings?email=${user?.email}`;
-  fetch(url)
-    .then((res) => res.json())
-    .then((data) => setBookings(data));
+  // fetch(url)
+  //   .then((res) => res.json())
+  //   .then((data) => setBookings(data));
 
-  // axios.get(url,{withCredentials:true})
-  // .then(res=>{
-  //   setBookings(res.data)
-  // })
+  axios.get(url,{withCredentials:true})
+  .then(res=>{
+    setBookings(res.data)
+  })
 
 
   const handleDelete = (id) => {
